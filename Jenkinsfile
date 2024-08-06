@@ -1,4 +1,3 @@
-[12:22] Jagdish-Trainer (Unverified)
 pipeline{
     agent any
     tools{
