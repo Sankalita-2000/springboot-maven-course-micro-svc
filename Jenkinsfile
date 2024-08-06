@@ -6,10 +6,7 @@ maven 'maven'
 stages{
 stage('checkout the code'){
 steps{
- 
-git url:'
-https://github.com/Sankalita-2000/springboot-maven-course-micro-svc.git'
-, branch: 'master'
+git url:'https://github.com/Sankalita-2000/springboot-maven-course-micro-svc.git', branch: 'master'
 }
 }
 stage('build the code'){
@@ -23,7 +20,6 @@ script{
 withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonarqube') {
 sh 'mvn sonar:sonar '
 }
- 
 timeout(time: 1, unit: 'HOURS') {
 def qg = waitForQualityGate()
 if (qg.status != 'OK') {
